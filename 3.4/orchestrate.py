@@ -1,3 +1,9 @@
+import asyncio
+import sys
+
+if sys.platform == 'win32':
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    
 import pathlib
 import pickle
 import pandas as pd
@@ -111,8 +117,10 @@ def train_best_model(
 
 @flow
 def main_flow(
-    train_path: str = "./data/green_tripdata_2021-01.parquet",
-    val_path: str = "./data/green_tripdata_2021-02.parquet",
+    #train_path: str = "./data/green_tripdata_2021-01.parquet",
+    #val_path: str = "./data/green_tripdata_2021-02.parquet",
+    train_path: str = f"https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-01.parquet",
+    val_path: str = f"https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-02.parquet",
 ) -> None:
     """The main training pipeline"""
 
