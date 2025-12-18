@@ -19,6 +19,7 @@ pull:
     repository: https://github.com/a-mohan1/mlops-zc-prefect.git
     branch: main
     access_token: null
+    id: clone_step
 - prefect.deployments.steps.run_shell_script:
     script: |
         pwd
@@ -26,10 +27,10 @@ pull:
         echo "--- Looking for requirements.txt ---"
         find . -name "requirements.txt"
     stream_output: true
-#- prefect.deployments.steps.pip_install_requirements:
-#    directory: ${pull_step.directory}
-#    requirements_file: requirements.txt
-#    stream_output: true
-- prefect.deployments.steps.run_shell_script:
-    script: pip install -r requirements.txt
+- prefect.deployments.steps.pip_install_requirements:
+    directory: "{{ clone_step.directory }}"
+    requirements_file: requirements.txt
     stream_output: true
+#- prefect.deployments.steps.run_shell_script:
+#    script: pip install -r requirements.txt
+#    stream_output: true
