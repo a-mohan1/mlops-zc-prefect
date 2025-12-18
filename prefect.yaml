@@ -20,6 +20,7 @@ pull:
     branch: main
     access_token: null
     id: clone_step
+# The steps below are only needed for prefect cloud with prefect:managed workpool
 - prefect.deployments.steps.run_shell_script:
     script: |
         pwd
