@@ -18,7 +18,7 @@ def create_s3_bucket_block():
     my_s3_bucket_obj = S3Bucket(
         bucket_name="zoomcamp-bucket", credentials=aws_creds
     )
-    my_s3_bucket_obj.save(name="s3-bucket", overwrite=True)
+    my_s3_bucket_obj.save(name="s3-bucket-block", overwrite=True)
 
 
 if __name__ == "__main__":
