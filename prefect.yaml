@@ -20,5 +20,5 @@ pull:
     branch: main
     access_token: null
 - prefect.deployments.steps.pip_install_requirements:
-    requirements_file: requirements.txt
+    requirements_file: "{{ git_clone.directory }}/requirements.txt"
     stream_output: true
