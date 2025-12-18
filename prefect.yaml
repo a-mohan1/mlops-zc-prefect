@@ -19,6 +19,6 @@ pull:
     repository: https://github.com/a-mohan1/mlops-zc-prefect.git
     branch: main
     access_token: null
-- prefect.deployments.steps.pip_install_requirements:
-    requirements_file: requirements.txt
-    directory: "{{ git_clone.directory }}"
+#- prefect.deployments.steps.pip_install_requirements:
+#    requirements_file: requirements.txt
+#    directory: "{{ git_clone.directory }}"
